@@ -271,6 +271,10 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/mediatek \
     $(LOCAL_PATH)
 
+# VNDK
+PRODUCT_PACKAGES += \
+    vndservicemanager
+
 # Wifi
 PRODUCT_PACKAGES += \
     android.hardware.wifi-service-lazy
