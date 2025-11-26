@@ -52,6 +52,39 @@ PRODUCT_PACKAGES += \
     otapreopt_script
 
 # Audio
+TARGET_EXCLUDES_AUDIOFX := true
+PRODUCT_PACKAGES += \
+    android.hardware.audio.effect@7.0-impl \
+    android.hardware.audio.service \
+    android.hardware.soundtrigger@2.3-impl
+
+PRODUCT_PACKAGES +=\
+    android.hardware.audio.common-util \
+    android.hardware.audio.common@7.0.vendor \
+    android.hardware.audio.common@7.0-util.vendor \
+    android.hardware.audio@7.0-util.vendor \
+    android.hardware.audio@7.0.vendor \
+    android.hardware.soundtrigger@2.0.vendor
+
+PRODUCT_PACKAGES += \
+    audio.primary.default \
+    audio.r_submix.default \
+    audio.bluetooth.default \
+    audio.usb.default
+
+PRODUCT_PACKAGES += \
+    audio_policy.stub \
+    libalsautils \
+    libaudiopreprocessing \
+    libopus.vendor \
+    libnbaio_mono \
+    audioclient-types-aidl-cpp.vendor \
+
+PRODUCT_PACKAGES += \
+    libaudiofoundation.vendor \
+    libtinycompress
+
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_device.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_device.xml \
     $(LOCAL_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
