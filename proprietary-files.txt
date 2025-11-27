@@ -794,6 +794,14 @@ vendor/firmware/soc1_0_ram_mcu_2a_1_hdr.bin
 vendor/firmware/soc1_0_ram_wifi_2a_1_hdr.bin
 vendor/firmware/txpowerctrl.cfg
 
+# Firmware (recovery)
+vendor/firmware/ILITEK_FW:recovery/root/vendor/firmware/ILITEK_FW
+vendor/firmware/ILITEK_FW_120hz:recovery/root/vendor/firmware/ILITEK_FW_120hz
+vendor/firmware/novatek_ts_fw.bin:recovery/root/vendor/firmware/novatek_ts_fw.bin
+vendor/firmware/novatek_ts_fw_144.bin:recovery/root/vendor/firmware/novatek_ts_fw_144.bin
+vendor/firmware/novatek_ts_fw_jdi.bin:recovery/root/vendor/firmware/novatek_ts_fw_jdi.bin
+vendor/firmware/novatek_ts_fw_tm.bin:recovery/root/vendor/firmware/novatek_ts_fw_tm.bin
+
 # GPS
 vendor/bin/hw/android.hardware.gnss-service.mediatek
 vendor/bin/mnld
