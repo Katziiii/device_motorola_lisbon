@@ -260,8 +260,8 @@ vendor/etc/dual_golden_wide.bin
 vendor/lib/hw/vendor.mediatek.hardware.camera.atms@1.0-impl.so
 vendor/lib/hw/vendor.mediatek.hardware.camera.bgservice@1.1-impl.so
 vendor/lib/hw/vendor.mediatek.hardware.camera.postproc@1.0-impl.so
-vendor/lib/mt6785/libdpframework.so
-vendor/lib/mt6785/libmtk_drvb.so
+vendor/lib/mt6785/libdpframework.so;SYMLINK=vendor/lib/libdpframework.so
+vendor/lib/mt6785/libmtk_drvb.so;SYMLINK=vendor/lib/libmtk_drvb.so
 vendor/lib/lib3a.ae.core.so
 vendor/lib/lib3a.ae.so
 vendor/lib/lib3a.af.core.so
@@ -368,7 +368,6 @@ vendor/lib/libchromanr.so
 vendor/lib/libdip_drv.so
 vendor/lib/libdip_imem.so
 vendor/lib/libdip_postproc.so
-vendor/lib/libdpframework.so
 vendor/lib/libfeature.stereo.provider.so
 vendor/lib/libfeatureiodrv_mem.so
 vendor/lib/libgz_gp_client.so
@@ -381,7 +380,6 @@ vendor/lib/libimgsensorca.so
 vendor/lib/libispcameraca.so
 vendor/lib/liblowlight_ai_portrait.arcsoft.so
 vendor/lib/libmfllcore.so
-vendor/lib/libmtk_drvb.so
 vendor/lib/libmtkcam.atmseventmgr.so
 vendor/lib/libmtkcam.eventcallback.so
 vendor/lib/libmtkcam.logicalmodule.so
@@ -403,7 +401,6 @@ vendor/lib/libmtkcam_streamutils.so
 vendor/lib/libmtkcam_sysutils.so
 vendor/lib/libmtkcam_tuning_utils.so
 vendor/lib/libmtkcam_ulog.so
-vendor/lib/libpq_prot.so
 vendor/lib/libvpu.so
 vendor/lib/mot_lisbon_ov02b1b_mipi_raw_IdxMgr.so
 vendor/lib/mot_lisbon_ov02b1b_mipi_raw_tuning.so
@@ -424,8 +421,8 @@ vendor/lib64/hw/vendor.mediatek.hardware.camera.bgservice@1.1-impl.so
 vendor/lib64/hw/vendor.mediatek.hardware.camera.isphal@1.0-impl.so
 vendor/lib64/hw/vendor.mediatek.hardware.camera.lomoeffect@1.0-impl.so
 vendor/lib64/hw/vendor.mediatek.hardware.camera.postproc@1.0-impl.so
-vendor/lib64/mt6785/libdpframework.so
-vendor/lib64/mt6785/libmtk_drvb.so
+vendor/lib64/mt6785/libdpframework.so;SYMLINK=vendor/lib64/libdpframework.so
+vendor/lib64/mt6785/libmtk_drvb.so;SYMLINK=vendor/lib64/libmtk_drvb.so
 vendor/lib64/mtkcam/libmtkcam_streaminfo_plugin-p1stt.so
 vendor/lib64/lib3a.ae.core.so
 vendor/lib64/lib3a.ae.so
@@ -551,7 +548,6 @@ vendor/lib64/libchromanr.so
 vendor/lib64/libdip_drv.so
 vendor/lib64/libdip_imem.so
 vendor/lib64/libdip_postproc.so
-vendor/lib64/libdpframework.so
 vendor/lib64/libeffecthal.base.so
 vendor/lib64/libfcell.so
 vendor/lib64/libfeature.face.so
@@ -576,7 +572,6 @@ vendor/lib64/liblpcnr.so
 vendor/lib64/libmfllcore.so
 vendor/lib64/libmpbase.so
 vendor/lib64/libmsnr.so
-vendor/lib64/libmtk_drvb.so
 vendor/lib64/libmtkcam.atmseventmgr.so
 vendor/lib64/libmtkcam.eventcallback.so
 vendor/lib64/libmtkcam.featurepipe.capture.so
@@ -643,7 +638,6 @@ vendor/lib64/libmtkcam_tuning_utils.so
 vendor/lib64/libmtkcam_ulog.so
 vendor/lib64/libmtkcam_vsync_util.so
 vendor/lib64/libmtkisp_metadata.so
-vendor/lib64/libpq_prot.so
 vendor/lib64/libstereoinfoaccessor_vsdof.so
 vendor/lib64/mot_lisbon_ov02b1b_mipi_raw_IdxMgr.so
 vendor/lib64/mot_lisbon_ov02b1b_mipi_raw_tuning.so
@@ -683,7 +677,7 @@ vendor/lib/hw/android.hardware.memtrack@1.0-impl.so
 vendor/lib/hw/displaypanel.default.so
 vendor/lib/hw/memtrack.default.so
 vendor/lib/hw/vendor.mediatek.hardware.pq@2.12-impl.so
-vendor/lib/mt6785/libpq_prot.so
+vendor/lib/mt6785/libpq_prot.so;SYMLINK=vendor/lib/libpq_prot.so
 vendor/lib/libaal_cust.so
 vendor/lib/libaal_key.so
 vendor/lib/libaal_mtk.so
@@ -718,7 +712,7 @@ vendor/lib64/hw/displaypanel.default.so
 vendor/lib64/hw/hwcomposer.mt6785.so
 vendor/lib64/hw/memtrack.default.so
 vendor/lib64/hw/vendor.mediatek.hardware.pq@2.12-impl.so
-vendor/lib64/mt6785/libpq_prot.so
+vendor/lib64/mt6785/libpq_prot.so;SYMLINK=vendor/lib64/libpq_prot.so
 vendor/lib64/libaal_cust.so
 vendor/lib64/libaal_key.so
 vendor/lib64/libaal_mtk.so
@@ -860,14 +854,10 @@ vendor/lib64/hw/gps.default.so
 vendor/lib64/libhydra.so
 
 # Gatekeeper
-vendor/lib/hw/gatekeeper.default.so
-vendor/lib/hw/gatekeeper.trustonic.so
-vendor/lib/hw/libMcGatekeeper.so
-vendor/lib/hw/libSoftGatekeeper.so
-vendor/lib64/hw/gatekeeper.default.so
-vendor/lib64/hw/gatekeeper.trustonic.so
-vendor/lib64/hw/libMcGatekeeper.so
-vendor/lib64/hw/libSoftGatekeeper.so
+vendor/lib/hw/libMcGatekeeper.so;SYMLINK=vendor/lib/hw/gatekeeper.trustonic.so
+vendor/lib/hw/libSoftGatekeeper.so;SYMLINK=vendor/lib/hw/gatekeeper.default.so
+vendor/lib64/hw/libMcGatekeeper.so;SYMLINK=vendor/lib64/hw/gatekeeper.trustonic.so
+vendor/lib64/hw/libSoftGatekeeper.so;SYMLINK=vendor/lib64/hw/gatekeeper.default.so
 
 # Graphics
 vendor/bin/hw/android.hardware.graphics.allocator@4.0-service-mediatek
@@ -875,14 +865,13 @@ vendor/etc/init/android.hardware.graphics.allocator@4.0-service-mediatek.rc
 vendor/etc/init/vpud.rc
 vendor/etc/vintf/manifest/manifest_hwcomposer.xml
 vendor/lib/egl/egl.cfg
-vendor/lib/egl/libGLES_mali.so
+vendor/lib/egl/libGLES_mali.so;SYMLINK=vendor/lib/hw/vulkan.mt6785.so
 vendor/lib/egl/libGLES_meow.so
 vendor/lib/egl/libMEOW_data.so
 vendor/lib/egl/libMEOW_gift.so
 vendor/lib/egl/libMEOW_qt.so
 vendor/lib/egl/libMEOW_trace.so
 vendor/lib/hw/gralloc.default.so
-vendor/lib/hw/vulkan.mt6785.so
 vendor/lib/arm.graphics-V1-ndk_platform.so
 vendor/lib/libDefaultFpsActor.so
 vendor/lib/libFrameRecord.so
@@ -894,14 +883,13 @@ vendor/lib/libgralloc_extra.so
 vendor/lib/libgralloc_metadata.so
 vendor/lib/libgralloctypes_mtk.so
 vendor/lib/libpqparamparser.so
-vendor/lib64/egl/libGLES_mali.so
+vendor/lib64/egl/libGLES_mali.so;SYMLINK=vendor/lib64/hw/vulkan.mt6785.so
 vendor/lib64/egl/libGLES_meow.so
 vendor/lib64/egl/libMEOW_data.so
 vendor/lib64/egl/libMEOW_gift.so
 vendor/lib64/egl/libMEOW_qt.so
 vendor/lib64/egl/libMEOW_trace.so
 vendor/lib64/hw/gralloc.default.so
-vendor/lib64/hw/vulkan.mt6785.so
 vendor/lib64/arm.graphics-V1-ndk_platform.so
 vendor/lib64/libDefaultFpsActor.so
 vendor/lib64/libFrameRecord.so
@@ -969,14 +957,12 @@ vendor/bin/hw/android.hardware.keymaster@4.1-service.trustonic
 vendor/bin/hw/vendor.mediatek.hardware.keymaster_attestation@1.1-service
 vendor/etc/init/android.hardware.keymaster@4.1-service.trustonic.rc
 vendor/etc/init/vendor.mediatek.hardware.keymaster_attestation@1.1-service.rc
-vendor/lib/hw/kmsetkey.default.so
-vendor/lib/hw/kmsetkey.trustonic.so
+vendor/lib/hw/kmsetkey.trustonic.so;SYMLINK=vendor/lib/hw/kmsetkey.default.so
 vendor/lib/hw/vendor.mediatek.hardware.keymaster_attestation@1.1-impl.so
 vendor/lib/libdecrypt.so
 vendor/lib/vendor.mediatek.hardware.keymaster_attestation@1.0.so
 vendor/lib/vendor.mediatek.hardware.keymaster_attestation@1.1.so
-vendor/lib64/hw/kmsetkey.default.so
-vendor/lib64/hw/kmsetkey.trustonic.so
+vendor/lib64/hw/kmsetkey.trustonic.so;SYMLINK=vendor/lib64/hw/kmsetkey.default.so
 vendor/lib64/hw/vendor.mediatek.hardware.keymaster_attestation@1.1-impl.so
 vendor/lib64/libdecrypt.so
 vendor/lib64/libkmsetkey.so
@@ -1179,7 +1165,7 @@ vendor/bin/hw/android.hardware.neuralnetworks@1.3-service-mtk-neuron
 vendor/etc/init/android.hardware.neuralnetworks@1.3-service-mtk-neuron.rc
 vendor/etc/vintf/manifest/android.hardware.neuralnetworks@1.3-service-mtk-dsp-gpu.xml
 vendor/etc/armnn_app.config
-vendor/lib/mt6785/libnir_neon_driver.so
+vendor/lib/mt6785/libnir_neon_driver.so;SYMLINK=vendor/lib/libnir_neon_driver.so
 vendor/lib/libapu_mdw.so
 vendor/lib/libapusys.so
 vendor/lib/libapusys_edma.so
@@ -1190,16 +1176,15 @@ vendor/lib/libcmdl_ndk.mtk.vndk.so
 vendor/lib/libneuroeara.so
 vendor/lib/libneuron_graph_delegate.mtk.so
 vendor/lib/libneuropilot_hal_utils.so
-vendor/lib/libnir_neon_driver.so
 vendor/lib/libnir_neon_driver_ndk.mtk.vndk.so
 vendor/lib/libtflite_mtk.so
 vendor/lib/libvpx.so
 vendor/lib/vendor.mediatek.hardware.apmonitor@2.0.so
 vendor/lib/vendor.mediatek.hardware.apuware.utils@2.0.so
-vendor/lib64/mt6785/libmcv_runtime.mtk.so
-vendor/lib64/mt6785/libneuron_runtime.5.so
-vendor/lib64/mt6785/libneuron_runtime.so
-vendor/lib64/mt6785/libnir_neon_driver.so
+vendor/lib64/mt6785/libmcv_runtime.mtk.so;SYMLINK=vendor/lib64/libmcv_runtime.mtk.so
+vendor/lib64/mt6785/libneuron_runtime.5.so;SYMLINK=vendor/lib64/libneuron_runtime.5.so
+vendor/lib64/mt6785/libneuron_runtime.so;SYMLINK=vendor/lib64/libneuron_runtime.so
+vendor/lib64/mt6785/libnir_neon_driver.so;SYMLINK=vendor/lib64/libnir_neon_driver.so
 vendor/lib64/APUWareUtilsServer.so
 vendor/lib64/APUWareXrpServer.so
 vendor/lib64/libapu_mdw.so
@@ -1209,15 +1194,11 @@ vendor/lib64/libarmnn.so
 vendor/lib64/libarmnn_ndk.mtk.vndk.so
 vendor/lib64/libcmdl.so
 vendor/lib64/libcmdl_ndk.mtk.vndk.so
-vendor/lib64/libmcv_runtime.mtk.so
 vendor/lib64/libneuroeara.so
 vendor/lib64/libneuron_adapter.so
 vendor/lib64/libneuron_graph_delegate.mtk.so
 vendor/lib64/libneuron_platform.so
-vendor/lib64/libneuron_runtime.5.so
-vendor/lib64/libneuron_runtime.so
 vendor/lib64/libneuropilot_hal_utils.so
-vendor/lib64/libnir_neon_driver.so
 vendor/lib64/libnir_neon_driver_ndk.mtk.vndk.so
 vendor/lib64/libtflite_mtk.so
 vendor/lib64/vendor.mediatek.hardware.apuware.utils@2.0.so
