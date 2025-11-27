@@ -320,6 +320,15 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.config@1.3.vendor \
     android.hardware.radio@1.6.vendor
 
+# Recovery-modules
+KERNEL_PATH := device/motorola/lisbon-kernel
+MODULES_PATH := $(KERNEL_PATH)/vendor-modules
+
+PRODUCT_COPY_FILES += \
+    $(MODULES_PATH)/sensors_class.ko:$(TARGET_COPY_OUT_RECOVERY)/vendor/lib/modules/sensors_class.ko \
+    $(MODULES_PATH)/mtk_tpd_mmi.ko:$(TARGET_COPY_OUT_RECOVERY)/vendor/lib/modules/mtk_tpd_mmi.ko \
+    $(MODULES_PATH)/ilitek_mtk_mmi.ko:$(TARGET_COPY_OUT_RECOVERY)/vendor/lib/modules/ilitek_mtk_mmi.ko
+
 # Rootdir
 PRODUCT_PACKAGES += \
     apanic_annotate.sh \
