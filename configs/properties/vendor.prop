@@ -101,7 +101,6 @@ ro.opengles.version=196610
 ro.incremental.enable=yes
 
 # Init
-init.userspace_reboot.is_supported=true
 ro.vendor.rc=/vendor/etc/init/hw/
 ro.vendor.init.sensor.rc=init.sensor_1_0.rc
 
