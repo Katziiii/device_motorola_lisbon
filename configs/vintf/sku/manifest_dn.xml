@@ -1,0 +1,5 @@
+<!--
+    Input:
+        manifest_dn.xml
+-->
+<manifest version="4.0" type="device"/>

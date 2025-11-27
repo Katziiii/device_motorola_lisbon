@@ -122,6 +122,13 @@ VENDOR_SECURITY_PATCH := 2023-03-01
 # Sepolicy
 include device/mediatek/sepolicy_vndr/SEPolicy.mk
 
+# SKU
+ODM_MANIFEST_SKUS += b d dn n
+ODM_MANIFEST_B_FILES := $(DEVICE_PATH)/configs/vintf/sku/manifest_b.xml
+ODM_MANIFEST_D_FILES := $(DEVICE_PATH)/configs/vintf/sku/manifest_d.xml
+ODM_MANIFEST_DN_FILES := $(DEVICE_PATH)/configs/vintf/sku/manifest_dn.xml
+ODM_MANIFEST_N_FILES := $(DEVICE_PATH)/configs/vintf/sku/manifest_n.xml
+
 # Verified Boot
 BOARD_USES_RECOVERY_AS_BOOT := true
 BOARD_AVB_ENABLE := true

@@ -26,11 +26,6 @@ PRODUCT_PACKAGES += \
     update_verifier
 
 PRODUCT_PACKAGES += \
-    mtk_plpath_utils \
-    mtk_plpath_utils.recovery \
-    mtk_plpath_utils_ota
-
-PRODUCT_PACKAGES += \
     android.hardware.boot@1.2-service \
     android.hardware.boot@1.2-impl \
     android.hardware.boot@1.2-impl.recovery
@@ -254,8 +249,26 @@ PRODUCT_PACKAGES += \
 
 # NFC
 PRODUCT_PACKAGES += \
-    android.hardware.nfc@1.2.vendor \
     android.hardware.secure_element@1.2.vendor
+
+# NFC
+PRODUCT_PACKAGES += \
+    android.hardware.nfc@1.2-service \
+    android.hardware.nfc@1.2.vendor \
+    com.android.nfc_extras \
+    libchrome.vendor \
+    NfcNci \
+    SecureElement \
+    Tag
+
+PRODUCT_PACKAGES += \
+    nfc_nci_nxp.vendor \
+    ese_spi_nxp.vendor \
+    ese_client.vendor \
+    vendor.nxp.nxpnfclegacy@1.0.vendor \
+    vendor.nxp.eventprocessor@1.0.vendor \
+    vendor.nxp.nxpese@1.0.vendor \
+    vendor.nxp.nxpnfc@2.0.vendor
 
 # Permissions
 PRODUCT_COPY_FILES += \

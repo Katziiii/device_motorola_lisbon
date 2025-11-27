@@ -1202,25 +1202,9 @@ vendor/etc/init/android.hardware.nfc@1.2-service.rc
 vendor/etc/init/android.hardware.secure_element@1.2-service-mediatek.rc
 vendor/etc/libnfc-nci.conf
 vendor/etc/libnfc-nxp.conf
-vendor/lib/ese_client.so
-vendor/lib/ese_spi_nxp.so
 vendor/lib/hal_libnfc.so
-vendor/lib/libnxp_extamp_intf.so
-vendor/lib/nfc_nci_nxp.so
-vendor/lib/vendor.nxp.eventprocessor@1.0.so
-vendor/lib/vendor.nxp.nxpese@1.0.so
-vendor/lib/vendor.nxp.nxpnfc@2.0.so
-vendor/lib/vendor.nxp.nxpnfclegacy@1.0.so
-vendor/lib64/ese_client.so
-vendor/lib64/ese_spi_nxp.so
 vendor/lib64/hal_libnfc.so
-vendor/lib64/libnxp_extamp_intf.so
 vendor/lib64/libpn557_fw.so
-vendor/lib64/nfc_nci_nxp.so
-vendor/lib64/vendor.nxp.eventprocessor@1.0.so
-vendor/lib64/vendor.nxp.nxpese@1.0.so
-vendor/lib64/vendor.nxp.nxpnfc@2.0.so
-vendor/lib64/vendor.nxp.nxpnfclegacy@1.0.so
 
 # NVRAM
 vendor/bin/hw/vendor.mediatek.hardware.nvram@1.1-service
