@@ -26,9 +26,8 @@ PRODUCT_PACKAGES += \
     update_verifier
 
 PRODUCT_PACKAGES += \
-    android.hardware.boot@1.2-service \
-    android.hardware.boot@1.2-impl \
-    android.hardware.boot@1.2-impl.recovery
+    com.android.hardware.boot \
+    android.hardware.boot-service.default_recovery
 
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
