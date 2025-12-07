@@ -358,9 +358,9 @@ KERNEL_PATH := device/motorola/lisbon-kernel
 MODULES_PATH := $(KERNEL_PATH)/vendor-modules
 
 PRODUCT_COPY_FILES += \
-    $(MODULES_PATH)/sensors_class.ko:$(TARGET_COPY_OUT_RECOVERY)/vendor/lib/modules/sensors_class.ko \
-    $(MODULES_PATH)/mtk_tpd_mmi.ko:$(TARGET_COPY_OUT_RECOVERY)/vendor/lib/modules/mtk_tpd_mmi.ko \
-    $(MODULES_PATH)/ilitek_mtk_mmi.ko:$(TARGET_COPY_OUT_RECOVERY)/vendor/lib/modules/ilitek_mtk_mmi.ko
+    $(MODULES_PATH)/sensors_class.ko:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules/sensors_class.ko \
+    $(MODULES_PATH)/mtk_tpd_mmi.ko:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules/mtk_tpd_mmi.ko \
+    $(MODULES_PATH)/ilitek_mtk_mmi.ko:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib/modules/ilitek_mtk_mmi.ko
 
 # Rootdir
 PRODUCT_PACKAGES += \
@@ -383,6 +383,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     fstab.mt6785 \
+    fstab.mt6785.ramdisk \
     init.ago.rc \
     init.connectivity.rc \
     init.modem.rc \
@@ -396,9 +397,6 @@ PRODUCT_PACKAGES += \
     init.project.rc \
     init.sensor_1_0.rc \
     ueventd.mt6785.rc
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/fstab.mt6785:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6785
 
 # Sensors
 PRODUCT_PACKAGES += \
