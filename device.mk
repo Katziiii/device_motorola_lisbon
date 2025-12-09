@@ -26,8 +26,9 @@ PRODUCT_PACKAGES += \
     update_verifier
 
 PRODUCT_PACKAGES += \
-    com.android.hardware.boot \
-    android.hardware.boot-service.default_recovery
+    android.hardware.boot@1.2-impl \
+    android.hardware.boot@1.2-impl.recovery \
+    android.hardware.boot@1.2-service
 
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
@@ -49,19 +50,12 @@ PRODUCT_PACKAGES += \
     otapreopt_script
 
 # Audio
-TARGET_EXCLUDES_AUDIOFX := true
 PRODUCT_PACKAGES += \
-    android.hardware.audio.effect@7.0-impl \
-    android.hardware.audio.service \
+    android.hardware.audio.service.mediatek \
+    android.hardware.audio@6.0-impl \
+    android.hardware.audio.effect@6.0-impl \
+    android.hardware.bluetooth.audio-impl \
     android.hardware.soundtrigger@2.3-impl
-
-PRODUCT_PACKAGES +=\
-    android.hardware.audio.common-util \
-    android.hardware.audio.common@7.0.vendor \
-    android.hardware.audio.common@7.0-util.vendor \
-    android.hardware.audio@7.0-util.vendor \
-    android.hardware.audio@7.0.vendor \
-    android.hardware.soundtrigger@2.0.vendor
 
 PRODUCT_PACKAGES += \
     audio.primary.default \
@@ -75,15 +69,19 @@ PRODUCT_PACKAGES += \
     libaudiopreprocessing \
     libopus.vendor \
     libnbaio_mono \
-    audioclient-types-aidl-cpp.vendor \
+    audioclient-types-aidl-cpp.vendor
 
 PRODUCT_PACKAGES += \
     libaudiofoundation.vendor \
     libtinycompress
 
 PRODUCT_PACKAGES += \
-    BesLoudness \
-    MtkInCallService
+    libalsautils_legacy \
+    libtinyxml \
+    tinymix
+
+PRODUCT_PACKAGES += \
+    BesLoudness
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_device.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_device.xml \
@@ -104,40 +102,57 @@ PRODUCT_COPY_FILES += \
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio-impl \
-    libbluetooth_audio_session \
-    android.hardware.bluetooth@1.1.vendor
+    android.hardware.bluetooth@1.0.vendor \
+    android.hardware.bluetooth@1.1.vendor \
+    libbluetooth_audio_session
 
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.common@1.0.vendor \
+    android.hardware.camera.device@3.3.vendor \
+    android.hardware.camera.device@3.4.vendor \
+    android.hardware.camera.device@3.5.vendor \
     android.hardware.camera.device@3.6.vendor \
+    android.hardware.camera.provider@2.4.vendor \
+    android.hardware.camera.provider@2.5.vendor \
     android.hardware.camera.provider@2.6.vendor \
-    libexpat.vendor
 
 PRODUCT_PACKAGES += \
-    libcamera2ndk_vendor
-
-PRODUCT_PACKAGES += \
+    libdng_sdk.vendor \
+    libexpat.vendor \
     libcamera_metadata.vendor \
     libpng.vendor \
     libexif \
-    libexif.vendor
+    libexif.vendor \
+    libcamera2ndk_vendor
 
 # Display
 PRODUCT_PACKAGES += \
-    android.frameworks.displayservice@1.0.vendor \
-    android.hardware.graphics.allocator@2.0.vendor \
-    android.hardware.graphics.allocator@3.0.vendor \
+    android.hardware.graphics.composer@2.1-service
+
+PRODUCT_PACKAGES += \
+    android.hardware.memtrack-service.mediatek-mali
+
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.common@1.2.vendor \
+    android.hardware.graphics.mapper@4.0.vendor \
     android.hardware.graphics.allocator@4.0.vendor
 
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.composer@2.3-service \
-    android.hardware.memtrack-service.mediatek-mali
+    libdrm.vendor
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm-service.clearkey \
-    android.hardware.drm@1.4.vendor
+    android.hardware.drm@1.4-service.clearkey
+
+PRODUCT_PACKAGES += \
+    libmockdrmcryptoplugin
+
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.0.vendor \
+    android.hardware.drm@1.1.vendor \
+    android.hardware.drm@1.2.vendor \
+    android.hardware.drm@1.3.vendor
 
 # Dynamic Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
@@ -161,9 +176,11 @@ PRODUCT_PACKAGES += \
 
 # GNSS
 PRODUCT_PACKAGES += \
-    android.hardware.gnss-V1-ndk.vendor \
+    android.hardware.gnss@1.0.vendor \
     android.hardware.gnss@1.1.vendor \
+    android.hardware.gnss@2.0.vendor \
     android.hardware.gnss@2.1.vendor \
+    android.hardware.gnss.measurement_corrections@1.0.vendor \
     android.hardware.gnss.measurement_corrections@1.1.vendor \
     android.hardware.gnss.visibility_control@1.0.vendor
 
@@ -178,14 +195,18 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl.recovery \
     android.hardware.health@2.1-service
 
+PRODUCT_PACKAGES += \
+    android.hardware.health@2.0
+
 # HIDL
 PRODUCT_PACKAGES += \
-    libhidltransport \
-    libhwbinder
-
-PRODUCT_PACKAGES += \
+    android.hidl.base@1.0 \
+    android.hidl.allocator@1.0 \
+    android.hidl.base@1.0.vendor \
     android.hidl.allocator@1.0.vendor \
+    libhidltransport \
     libhidltransport.vendor \
+    libhwbinder \
     libhwbinder.vendor
 
 PRODUCT_PACKAGES += \
@@ -253,12 +274,11 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video_le.xml
 
-# Memtrack
-PRODUCT_PACKAGES += \
-    android.hardware.memtrack-V1-ndk.vendor
-
 # Neural Networks
 PRODUCT_PACKAGES += \
+    android.hardware.neuralnetworks@1.0.vendor \
+    android.hardware.neuralnetworks@1.1.vendor \
+    android.hardware.neuralnetworks@1.2.vendor \
     android.hardware.neuralnetworks@1.3.vendor
 
 PRODUCT_PACKAGES += \
@@ -341,17 +361,32 @@ PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.mtkpower@1.2.vendor
 
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.3.vendor
+    vendor.mediatek.hardware.mtkpower@1.1.vendor \
+    vendor.mediatek.hardware.mtkpower@1.2-service.stub
 
-# Protobuf
 PRODUCT_PACKAGES += \
-    libprotobuf-cpp-full-3.9.1-vendorcompat \
-    libprotobuf-cpp-lite-3.9.1-vendorcompat
+    libmtkperf_client_vendor \
+    libmtkperf_client
+
+PRODUCT_PACKAGES += \
+    android.hardware.power@1.0.vendor \
+    android.hardware.power@1.1.vendor \
+    android.hardware.power@1.2.vendor \
+    android.hardware.power@1.3.vendor
 
 # Radio
 PRODUCT_PACKAGES += \
-    android.hardware.radio.config@1.3.vendor \
-    android.hardware.radio@1.6.vendor
+    android.hardware.radio@1.0.vendor \
+    android.hardware.radio@1.1.vendor \
+    android.hardware.radio@1.2.vendor \
+    android.hardware.radio@1.3.vendor \
+    android.hardware.radio@1.4.vendor \
+    android.hardware.radio@1.5.vendor \
+    android.hardware.radio.config@1.0.vendor \
+    android.hardware.radio.config@1.1.vendor \
+    android.hardware.radio.config@1.2.vendor \
+    android.hardware.radio.deprecated@1.0.vendor \
+    android.hardware.radio-V1.4-java
 
 # Recovery-modules
 KERNEL_PATH := device/motorola/lisbon-kernel
@@ -400,10 +435,11 @@ PRODUCT_PACKAGES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
+    android.hardware.sensors@2.1-service.multihal \
     android.hardware.sensors@1.0.vendor \
+    android.hardware.sensors@2.0.vendor \
     android.hardware.sensors@2.0-ScopedWakelock.vendor \
-    android.hardware.sensors@2.1.vendor \
-    android.frameworks.sensorservice@1.0.vendor
+    android.frameworks.sensorservice@1.0
 
 PRODUCT_PACKAGES += \
     libsensorndkbridge
@@ -445,13 +481,10 @@ PRODUCT_PACKAGES += \
     vndservicemanager
 
 PRODUCT_PACKAGES += \
-    libstagefright_foundation-v33 \
+    libstagefright_foundation-v32 \
     libutils-v32
 
 # Wifi
-PRODUCT_PACKAGES += \
-    android.hardware.wifi-service-lazy
-
 PRODUCT_PACKAGES += \
     hostapd \
     wpa_supplicant \
@@ -459,9 +492,6 @@ PRODUCT_PACKAGES += \
     android.hardware.tetheroffload.config@1.0.vendor \
     android.hardware.tetheroffload.control@1.1.vendor \
     libnetutils.vendor
-
-PRODUCT_PACKAGES += \
-    libwifi-hal-wrapper
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/wifi/,$(TARGET_COPY_OUT_VENDOR)/etc/wifi)
